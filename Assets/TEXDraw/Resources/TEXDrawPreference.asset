@@ -1,0 +1,1347 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f181994389177aa4e8807fb9cd14776f, type: 3}
+  m_Name: TEXDrawPreference
+  m_EditorClassIdentifier: 
+  MainFolderPath: Assets/TEXDraw
+  IncludeMathSlot: 1
+  header_mathCount: 8
+  header_userCount: 16
+  configs:
+  - name: SpaceWidth
+    desc: Standard Empty Space Width
+    value: 0.35
+    defaultValue: 0.35
+    min: 0
+    max: 2
+  - name: LineHeight
+    desc: Minimum Single Line Height
+    value: 0.7
+    defaultValue: 0.7
+    min: 0
+    max: 2
+  - name: GlueRatio
+    desc: Glue Width Multiplier
+    value: 0.033
+    defaultValue: 0.03
+    min: 0
+    max: 0.2
+  - name: ExtentPadding
+    desc: Extension Padding Sizes
+    value: 0.032
+    defaultValue: 0.025
+    min: 0
+    max: 0.1
+  - name: ScriptFactor
+    desc: The Size ratio of First Script
+    value: 0.56
+    defaultValue: 0.6
+    min: 0.1
+    max: 1
+  - name: NestedScriptFactor
+    desc: The Size ratio of Nested Scripts
+    value: 0.38
+    defaultValue: 0.4
+    min: 0.1
+    max: 1
+  - name: AxisHeight
+    desc: Global Top-to-Bottom Orientation
+    value: 0.312
+    defaultValue: 0.32
+    min: -1
+    max: 1
+  - name: LineThickness
+    desc: Standard Line Thickness
+    value: 0.044
+    defaultValue: 0.045
+    min: 0
+    max: 0.5
+  - name: NegateMargin
+    desc: Negation Line Additional Width
+    value: 0.3
+    defaultValue: 0.3
+    min: 0
+    max: 2
+  - name: DoubleNegateOffset
+    desc: Double Negation Line Gap Width
+    value: 0.054
+    defaultValue: 0.08
+    min: 0
+    max: 1
+  - name: MatrixMargin
+    desc: Matrix Childs-to-Childs Gap Width
+    value: 0.4
+    defaultValue: 0.4
+    min: 0
+    max: 2
+  - name: OverUnderMargin
+    desc: Additional Gap for Accents
+    value: 0.09
+    defaultValue: 0.09
+    min: 0
+    max: 2
+  - name: FractionMargin
+    desc: Fraction Line Additional Width
+    value: 0.2
+    defaultValue: 0.2
+    min: 0
+    max: 2
+  - name: NumeratorShift
+    desc: Numerator Gap Size to the Fraction Line
+    value: 0.143
+    defaultValue: 0.33
+    min: 0
+    max: 1.5
+  - name: NumeratorShiftNoLine
+    desc: Numerator Gap (No Line) to the Fraction Line
+    value: 0.33
+    defaultValue: 0.28
+    min: 0
+    max: 1.5
+  - name: NumeratorNarrow
+    desc: Numerator Gap (Narrowed Size) to the Fraction Line
+    value: 0.11
+    defaultValue: 0.11
+    min: 0
+    max: 1.5
+  - name: DenominatorShift
+    desc: Denominator Gap Size to the Fraction Line
+    value: 0.613
+    defaultValue: 0.7
+    min: 0
+    max: 1.5
+  - name: DenominatorNarrow
+    desc: Denominator Gap (Narrowed Size) to the Fraction Line
+    value: 0.099
+    defaultValue: 0.5
+    min: 0
+    max: 1.5
+  - name: SupDrop
+    desc: Superscript Pivot Offset
+    value: 0.135
+    defaultValue: 0.32
+    min: 0
+    max: 1.5
+  - name: SubDrop
+    desc: Subscript Pivot Offset
+    value: 0.25
+    defaultValue: 0.25
+    min: 0
+    max: 1.5
+  - name: SupMin
+    desc: Superscript Minimum Offset
+    value: 0.28
+    defaultValue: 0.28
+    min: 0
+    max: 1.5
+  - name: SupMinCramped
+    desc: Superscript Minimum Offset (Cramped)
+    value: 0.2
+    defaultValue: 0.2
+    min: 0
+    max: 1.5
+  - name: SupMinNarrowed
+    desc: Superscript Minimum Offset (Narrowed)
+    value: 0.24
+    defaultValue: 0.24
+    min: 0
+    max: 1.5
+  - name: SubMinNoSup
+    desc: Subscript Minimum (No Superscript above)
+    value: 0.1
+    defaultValue: 0.1
+    min: 0
+    max: 1.5
+  - name: SubMinOnSup
+    desc: Subscript Minimum (With Superscript)
+    value: 0.18
+    defaultValue: 0.18
+    min: 0
+    max: 1.5
+  - name: BigOpMargin
+    desc: Big Operator's Additional Height Size
+    value: 0.09
+    defaultValue: 0.11
+    min: 0
+    max: 1.5
+  - name: BigOpUpShift
+    desc: Offset from Pivot of Upper limit to Big Operator's Top Bound
+    value: 0.111
+    defaultValue: 0.2
+    min: 0
+    max: 1.5
+  - name: BigOpUpperGap
+    desc: Minimum Gap of Upper limit to Big Operator's Top Bound
+    value: 0.102
+    defaultValue: 0.2
+    min: 0
+    max: 1.5
+  - name: BigOpLowShift
+    desc: Offset from Pivot of Lower limit to Big Operator's Low Bound
+    value: 0.1
+    defaultValue: 0.1
+    min: 0
+    max: 1.5
+  - name: BigOpLowerGap
+    desc: Minimum Gap of Lower limit to Big Operator's Low Bound
+    value: 0.16
+    defaultValue: 0.16
+    min: 0
+    max: 1.5
+  editorReloading: 0
+  defaultMaterial: {fileID: 2100000, guid: 9d473469be5a9fc448e911362f79b8a9, type: 2}
+  fontData:
+  - {fileID: 11400000, guid: 1d7ad9bce2209b34380596f6fb8f368b, type: 2}
+  - {fileID: 11400000, guid: 8eae75c4c3ee6db4295aae6111643852, type: 2}
+  - {fileID: 11400000, guid: 36cbf2b2c6380634f871b143d2c15ebe, type: 2}
+  - {fileID: 11400000, guid: af41f737f27d4574e973f9d0eabf6c73, type: 2}
+  - {fileID: 11400000, guid: 1a64294e11d0b7a47b897de048b96621, type: 2}
+  - {fileID: 11400000, guid: 537d330c496354a42a493d001c4c1a03, type: 2}
+  - {fileID: 11400000, guid: c69b39726b7dc4c4587ddb4473711fa9, type: 2}
+  - {fileID: 11400000, guid: a599888a47ccd9848b65c386385032b3, type: 2}
+  - {fileID: 11400000, guid: 3a7724c62c5a4a4469f53a7de7fc1d11, type: 2}
+  - {fileID: 11400000, guid: e52d6a9245a3187458f89fd0f589cb54, type: 2}
+  - {fileID: 11400000, guid: 4578b568985c89d428f612ba3325c88c, type: 2}
+  - {fileID: 11400000, guid: 2180f100e3f700a4594a88b850d95954, type: 2}
+  - {fileID: 11400000, guid: 86418612f43ce8d428e465fc429463d9, type: 2}
+  - {fileID: 11400000, guid: 2060b0f94ff091541a7aaa53ffad71af, type: 2}
+  - {fileID: 11400000, guid: e4c7dc4b21bd87d4780673b3f20f4262, type: 2}
+  - {fileID: 11400000, guid: 2281e009173047241917f55e92b405e2, type: 2}
+  - {fileID: 11400000, guid: 77774f88cd0325949be01c4001f35c2e, type: 2}
+  symbolData:
+    warnOnSetIfExist: 1
+    _Buckets: 7902000055020000ffffffffffffffffffffffff8e020000c3000000f000000000020000ffffffffb5000000ffffffffffffffff1c020000ffffffff8f02000035020000ffffffffc7010000ffffffffffffffffffffffffffffffff6f010000d7010000ffffffffffffffffc001000065010000a0020000e2010000ffffffffffffffff4002000087020000ffffffff450100007f020000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1010000ffffffffc1010000ffffffffffffffffffffffff4d010000ffffffffffffffffffffffff69020000050100007602000003020000ffffffff8c01000007020000ffffffffffffffffffffffff3a010000ffffffffd0010000ffffffffc90100001d0200004b010000a2000000540200008c000000450000006d010000ffffffffffffffff79000000ff000000ffffffff9b010000ffffffffffffffffffffffff91020000ffffffffffffffffffffffffffffffff7e010000ffffffffffffffffffffffffffffffffffffffff530100004b000000fffffffff2010000ffffffff4d0000000a010000b0000000ffffffff9b0000004a000000ffffffffffffffffffffffffffffffffa402000052020000ffffffffa30100005c0100008d020000ffffffff7e020000ffffffffffffffffffffffff0b020000d5010000ffffffff0d010000ffffffff35010000ffffffffd9010000ffffffff2c020000ffffffff37000000ffffffffffffffffffffffff87000000ffffffff4c010000ffffffffffffffffffffffffffffffff6a000000ffffffffffffffff300000005f020000ffffffff1201000096020000cc000000090100000f02000004010000a4010000ffffffffffffffff7a000000060100006b010000ffffffff8f010000ffffffff96010000ffffffffffffffffffffffff8202000013010000bf010000b3000000ffffffff4f020000ffffffff72010000ffffffffffffffffffffffffffffffffffffffff16020000fffffffffffffffffffffffff6000000ffffffffffffffffffffffffffffffffffffffffffffffff3101000078020000ffffffffffffffff5e00000031020000340200005f000000ffffffffffffffff620200002f01000047020000ffffffff22010000ea000000ffffffff24020000ffffffffffffffff49020000ffffffffffffffffa1000000ffffffffffffffff39020000dc010000ffffffff40000000ffffffffffffffffffffffff99020000fffffffff800000015020000ffffffffffffffff81000000ffffffffce010000ffffffffffffffffce00000067020000d400000066020000ffffffff5e020000ffffffff68000000ffffffffffffffffffffffffffffffff10020000b2010000ffffffffffffffffbe01000020000000ffffffffc5010000ab000000ffffffffffffffffffffffffffffffffffffffff6102000057020000ffffffffae020000ffffffff68010000ffffffffffffffff20020000a50000002b010000ffffffff47000000fffffffffffffffffffffffffffffffffa000000e50100006d020000ffffffff00010000ffffffff4d0200002202000010000000ffffffffffffffff8b010000ffffffff0a00000056020000ffffffffffffffff6300000080010000ffffffff5f0100000d020000fffffffffffffffff30000001302000069000000db010000ffffffffc2010000ffffffffffffffffffffffffffffffffffffffffbd000000ffffffffffffffffffffffff460100002c010000240100007a020000ffffffffdc000000ffffffffffffffff5c02000073020000fe010000ffffffffffffffff9502000014000000fffffffff5000000a7010000a5020000ffffffff84020000720200000c020000e8010000ffffffff67010000ac02000048020000ffffffff690100006a010000f4010000ffffffffffffffff3f010000ffffffffffffffffffffffff56010000ffffffffffffffffcb01000089020000ffffffff08000000ffffffffffffffffffffffffac0000006c020000ffffffff17020000ffffffffcd01000042020000ffffffffaa020000ffffffff1202000085020000ffffffff95010000fffffffffffffffffffffffff2000000ffffffff2a020000ffffffff3e020000ffffffffee000000ffffffffad020000ffffffff5600000086010000ffffffff25020000600200003f020000ffffffff8f0000001200000088000000ffffffff32020000ffffffffb1010000d8010000010200000e0000006700000048000000ffffffffa3020000ffffffff00000000590100008c020000ffffffffffffffff03000000ffffffffffffffffe6000000ffffffff8801000083000000e40100006f0200008802000017010000180000007c00000028020000a20100002b0200002f0200009c020000ffffffffffffffff4801000082010000ef010000ffffffff81020000ffffffffffffffff73010000ffffffffffffffff77020000ffffffff74020000ffffffffffffffffffffffffffffffffffffffffffffffffec010000540000002d01000090010000ffffffffffffffff9e010000fffffffffffffffffffffffff6010000ffffffffa3000000ffffffffffffffffffffffff45020000ffffffff3b0000000c010000ffffffff14010000ffffffffffffffff4e0200007f00000002000000ffffffffffffffffffffffffffffffff26020000ffffffff9702000009020000960000008d010000ffffffff7b0100001100000057010000ffffffff9e020000ffffffffffffffff5b000000ffffffff440200005c000000ffffffffffffffff300200001601000030010000ffffffff3a000000ffffffffffffffff1e00000046020000ee010000e901000051020000eb010000f9000000ffffffffffffffff3f00000011010000ffffffffffffffff2902000006020000f5010000ffffffffa1020000ffffffff330200007a010000ffffffff5a020000c601000042000000d0000000f80100005d020000e10100001c010000e3010000d700000083010000ffffffffe7000000ffffffff720000004a020000ffffffffffffffffffffffff53020000ffffffff43020000ffffffffffffffffa7020000800200003e0100008a010000ffffffffde00000011020000ffffffff64020000ffffffffffffffff73000000ffffffff49000000ffffffffe7010000ffffffff290000000c0000002a000000ffffffffffffffff1d0100007c020000b901000078000000ffffffffffffffffffffffffffffffffffffffff210000007502000023010000ffffffff4a010000ffffffffffffffffffffffff75010000ffffffff5b020000c0000000ffffffff2001000036010000ffffffffb301000058020000440100002d000000f70100001e0100004c02000094010000ffffffff0b010000ffffffffffffffffffffffffffffffffffffffffffffffff85010000ffffffffffffffff3a020000ffffffff95000000ffffffffffffffffa8020000ffffffffffffffff0a020000cc010000ffffffff8d000000980200009f02000089010000a501000070000000cf000000ffffffffffffffffffffffffffffffff7d020000590200003b020000ffffffff83020000ffffffff53000000ffffffffffffffff270100003c020000860200009c010000ffffffffd1010000ffffffffffffffff23020000ffffffffffffffffffffffffffffffffffffffff61010000ffffffff6c00000019010000360000000e020000900200004c000000fffffffff7000000ffffffff410000005e010000ffffffffef00000029010000ffffffffffffffff5d01000092020000ffffffff91010000a8000000ffffffffffffffffffffffffa9020000ffffffffffffffffffffffffffffffff71010000ffffffff79010000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff97000000f0010000ffffffffffffffffffffffffffffffffffffffff4e010000ffffffff8b020000ffffffffec000000b5010000ffffffffdd010000e3000000b6000000ffffffffffffffffeb000000ffffffff74000000ffffffff1a010000b7010000b60100002c00000093010000ffffffffffffffffffffffff1f010000f30100009701000018020000ffffffffffffffffffffffff2e0100003d01000014020000ffffffffffffffffffffffffffffffffffffffffa6000000d9000000ffffffffffffffffdb00000032000000c5000000ffffffffab02000050000000ffffffffffffffffdf010000ffffffffffffffffae00000021010000ffffffffffffffffffffffffffffffffffffffffda000000380200006f000000ffffffffffffffffffffffff9b0200006c010000ff010000ffffffff63020000fffffffffffffffffffffffffb010000ffffffff64000000aa0100006b020000ffffffffd2010000ffffffffffffffff6e020000af010000ffffffffda010000ffffffff940200007b0200000e0100004301000054010000ffffffffffffffff680200002d020000ffffffff71020000c3010000ffffffffa1010000ffffffff1b020000640100009f010000bd010000ae0100009a010000ffffffffffffffffab010000fd010000a6020000a400000051010000d10000002801000050020000ffffffffffffffffffffffff3c010000ffffffff6a020000ffffffff9a020000040200001b010000ad010000ffffffff27020000ffffffffffffffffffffffff100100008a020000ffffffffffffffffbc00000093020000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff37020000ba000000ffffffff08020000e6010000a001000099010000ffffffffffffffffffffffff330100004b02000077000000ffffffffffffffff21020000bc010000a2020000ffffffff0301000070020000ffffffff9d000000ffffffffffffffff360200008e01000007000000ed010000fffffffffffffffffffffffff4000000ffffffff47010000ffffffff0101000026000000ffffffffffffffffffffffff9d020000
+    _HashCodes: 93592c3e4d6d69486714c83221bb806c7f3b1b192012ee2c200d34007af72e798961b52c37b12d6a4bbe010057a33400ef9701003ee5322dd2e2322d8fee092db4fd202deb8e2d79962a332d4f06332dc399402fe80ee34f65a00764d1bf9f1f8743160498cbed037e86d004e73f3a07110b0000190a000005eac2045a5f165651390100a63a010041558c045eb18905f0152e00a733d905b8bbb0056a137a24d8fe3800928901009e769306136a31004b9d1106c753d53da80d0000c70d0000f10e0000f90d0000f9b8010025da8506a8bf01007ac7dd7271b10100a4800100c6b2010061454f066342882ed70f233660a7ac06724ce84e5e731536ea44e84eeb0ad818f24cf94276703f1bbd7b1d49d98a5173aa4bce6614bd0e270f66d4535d9d320099a132006c000000d881797025910100670000005206360081c9bc5079ff2f0029180d67ea4f850608b387063adfd205a5880100f1aafa0572c20806d90e000094c70100919a2d02c00c0000c30c0000c60c0000a98b0100ac8b010005c2e00544ae85059bc00100845b9a05137c0100290d0100240c0000620c00002408000062080000649aeb3e4b7d91201542a20586ecad68bc88f3304564885775c55d40cee337564dade53d07c12248931f112c9a8d3400d532a705a901c13552a60100b30e21067d2187065f2fa705b1d46f5553613d083467c405ac0c0000d752691be63b823afd1c8766af74d95cc4878d09215c4b06e981204c9b92010049850100a03562445803940665fa2e007068310606862e0046079406827a0100918401005421a662fd0d0000a30d000089be500661559b4337f4fd436e0ef1437afa33001796297917992e000265de2d6a028d053668c4054e621f05003b031d18a20100538f0100cca694456e8edc4ad7bc01001a00e52b2256dc4a54b3e24a800d0000b9152400e00c00000519010020a23400420a360062c0ef676da3652d4e4ee471a7e4a44db4261119b260d36cf7885275c3ef850642e0615f8d7f37242ee61c5587041745d4f2575d25c40914e09b8a0b1e6599457fb25f062632fb05250d0000bb0d0000a3f3f47d080a4659aae77e5438cc5f345cf4253390a90100e7c23200f5179847530a00004409000055c10100c77d0100f3723400128989053e820100d27f01008f4ba506b45abc06eb91320096c701004fa3010008c5ad062403af0520871b3eda9a5848717320067700750647ade53d01c12248e7dbd53da1ef124848a60100312d3700072ed24551a128006c144c3a4cbcb51d4e192055f614ab50db0e0000140c3600f0ed8905c4ae3b068811d95b206f8906b46c8906ac3252345e0b364c8ae72b30ee0c1b5aaa6a075ec364774a616283755368010cb2e1e7489e2f8f2de52d5c045b7060071d59ac4adcad714fd4dcf1581eb371153ff656298364f27ec09436083fb24876915ad16685d1fd06e8d4ea04728a6e1928399f069966c07ab6e7d91798cfb3010adf370f80bf264ecef2421a60d4ca01cc13f422e7179e7b4335d218dce4546f3d591272b2f3aa6f3fb013096d1b394ca12b010027420100100b0b47297c41726c597c275735654803bcec2e5573b510925d5b367f61fc738399f82620b19909061a1d7274897f4f9573f20369377b4fb766006d9e080504f34a74275b10e94d2342417ad9aa1247fb1214471907005b59a13200d60d2f79ecdc0404f8a583503cb35228bd4f673eb794014e7e5b30007b2dc9713e180d1500a6a34e3203aa4e4d0d3241b6aa590ac0d4531efb2a5330d17e774f086c167329740d747563630e8eef10742fbafd10072b0942aaead053c36fc03200ab2316aad9db7a9910562e99cbe860e2d201003fe5a65e9655bd6dcdbd165396b0463c05f3fc07612a674a9356b2494242411433f10175749f4714654e0875b20701006126f34f1e0a0100cd28f34f07334b24a9980022afb7c82c84034e77e3e7cc1e7125640362e8de2d82d4437719ef6f3eeca2010045d8db05878f01003ed5b0263fd5b026023078206346f06d903a4e6b3ce3a950db7db53126a6ba5f729dff21ab8c487c6ec4d03d32e3487c348b9d162f604731eaa233002590330007bb4006f79133008ebb4206b023440683742506fefede0544c0962ee9df3027aec13200d37b3000ba1c82005c04ca05c94f0a33ebd6f60515a825069032df05c7ba4006ec743e06371c0a3359a3f605e82fa97e86bdaa711c64d139c1836b32a9bd330093c83c0646eb99308d82c471f15c0b5e7f9aa24235835b16c3c0f27a39ffd33a6b732469a0416063d2b5b0113808cd1ec6456403bc14873a6eed6a5275e0397b1aa73300bab2fd20d518061f5ad962423ae99f407a4d54425a5d9140922a010be9d29a4c7d312150665f5b34b45b7e5f5b72aa27947bf0567b4e7c1ec29a9f79a2ce58352e06443fc616f9084a6a136eeb69210012c0210034a6010099890100ab60c405f7152e00b2d5dc05aa272e3010d1040404265b365a6adf3e147e1c494c00966b8376b9111ab86248f799bc79466ea546dcd0464d3a8a5f0381830a0de24d9c144232f5628436a135a97c1f001522ff37abc23000a30c6f756687f118e9bc9c1c5206f467ababa67eb45c01007b501505e0cb18056311571e914cb8596e75d74cffa5fb3fbc062e00ea70c44a3dbde46d0da701001e8261065acb1f0eebcc1f0e21d61f0e559c540683eea3273f63da35c257e03548e3fe05beb2f26f4fb4f26f85bdf26fb93a0b3f9f1cc1055b68640e07b6f26f899e463eca52ea2838a42f067fa023360726da3f52ec303e24b1791f67f551268029451d049e6d3bb422ab151c943200564e350010c53703605662191efa4a4b85552f56b2e34b2e84a8940feb89ea68f66c602ee2f086057325bf436e18200e8cd58906bcf156465b930e2144f133008abf951d299c4846cce0390dc73c3400a5472644cfb201433f806f39d545b14108a74206bc02d53aee76256968509f591a80a3353c08240076c22600286f0e686816f050d686331b168e6f604e00bb3b0eb5c95ed39aee692e441a6fa5b778719cc1d3588c863c0fccfdde5685d66b3e4577fd48bc3cef396a48a877a30d0f73dc43181807ab061f5bd0177f084aa72cbea85c506e3d5b0608e5a3053d3e1f6803152e002bad0b469e1cde79a51ed37c01f3614f3e6cb349600e2b6e6bb6fe7b83a72868f387205513fcae3c7eab0053ff052e00969a204f217d35000d0633004c9bd03311f04b220edca5055ee3a4660c121a358d94197299d4872204c57b66887f78661d8f84224a18bd0513efd53897ad4b5d8c66804c2b401f683232485d71ae6e4a3003344f4cbe0100d605985c86f68e2d96df791a032f19062036aa30a5c5531f1965b83a220800007c880c45d44b0100ed93b230e6c2c03a516f066080659e13eb8257575044c333c15c1d7fd1ba861360b6c8170f52de0594663100d60685270a365b761d4d5735cbb7ca49a83b1b4e11b5a76d34265d06e8f97f4b35928535802e7a2e4749b006742323068318ae72c68e45790f4b2b26d17b250377301c45a8892e001384e344f79b9306d7abd004840c000065a35006669ea200391c9653c042784625be7b46be675209682be84ee6523100cff6f805c7e81f0ed5834d0686b212645feea538348b3400f625580602083600cc0636001db5fa7e9fbe9a19013b330035dea5052bc5320069830934b9f91d7acd523600d446d348708431345404de6a470089064f1d760629bc8651938eca7788c28a065e7a2e0046f0e805fad57c5fd527cd174098a80522194a081fd9280458932e00f73e31007aa99b3e5f9e01003069300000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff06000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1c000000ffffffffffffffffffffffff35000000ffffffffffffffffffffffff38000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff46000000ffffffffffffffffffffffffffffffffffffffff0b000000ffffffffffffffffffffffff3e000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff27000000ffffffff39000000ffffffff4400000016000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff59000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff2f000000ffffffffffffffff04000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff34000000ffffffffffffffff8b000000ffffffff650000002e000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff99000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff9a000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff05000000ffffffffffffffffffffffffffffffff91000000ffffffffb9000000ffffffffffffffff82000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff4f000000ffffffffffffffff9e000000ffffffffffffffffffffffff9f0000008a000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffd6000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33000000ffffffffffffffff94000000ffffffffffffffffffffffffffffffff3d000000ffffffffffffffff7b000000ffffffffffffffff09000000ffffffffffffffffffffffffffffffffe0000000d2000000ffffffffffffffffffffffffffffffffe9000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffa000000060000000ffffffff23000000ffffffffffffffffffffffffffffffffffffffff2b000000ffffffffffffffffffffffffc1000000ffffffffad000000ffffffffffffffffffffffffffffffff57000000ffffffff25010000ffffffffffffffff86000000cb00000062000000ffffffffffffffffd300000024000000ffffffffaf000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcd000000890000006d000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff15000000ffffffffffffffff31000000ffffffffffffffffc7000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0d000000ffffffffffffffff43000000ffffffffffffffffffffffff55000000a9000000ffffffff6600000015010000ffffffffffffffffed000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff50010000ffffffffffffffff85000000ffffffffffffffffffffffff7e000000ffffffffffffffffffffffffffffffff52000000ffffffffffffffff75000000ffffffffe800000018010000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff740100001d000000ffffffff49010000fe000000ffffffffffffffffc6000000d5000000ffffffffffffffff7d000000ffffffff3b010000ffffffffffffffffffffffffffffffff4f010000ffffffffffffffffffffffffffffffffffffffffca000000fb000000ffffffff8e000000ffffffffffffffffffffffff9c000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc8000000ac010000ffffffff5201000076000000ffffffff98010000ffffffffa6010000ffffffffb0010000ffffffffffffffffffffffffe50000007d01000076010000ffffffffffffffffffffffffffffffffffffffff320100007801000058000000390100003c000000ffffffff71000000ffffffffffffffffffffffff9300000058010000ffffffffde010000a9010000ffffffffdd000000ffffffffffffffffffffffffe1000000ffffffffffffffff5a0000001900000062010000ffffffffffffffffbb010000b2000000ffffffffffffffff6100000084000000ffffffff6b000000fffffffffd000000ffffffffffffffffffffffffffffffff0f000000ffffffffffffffffffffffff34010000ffffffffffffffffffffffffb4010000d30100002a01000041010000c200000066010000fffffffffc010000ffffffffffffffffffffffffffffffffffffffffffffffff13000000b7000000ffffffffffffffffbb000000ffffffffffffffff84010000ffffffffffffffffbe000000ffffffffffffffff92010000ffffffffffffffffffffffff1e020000c900000019020000ffffffffffffffffffffffffffffffff37010000ffffffff92000000df000000010000005d000000cf010000ffffffffaa000000ffffffffffffffffffffffffffffffffffffffff9000000005020000ffffffffffffffffb80000003d020000ffffffffffffffffffffffff7001000007010000ffffffffffffffff81010000e001000002020000fffffffffffffffffffffffffc000000ffffffffffffffff0f010000ffffffffffffffffffffffffb8010000d4010000ffffffffffffffffffffffffa7000000630100002e020000ffffffffffffffffffffffffd8000000ffffffffffffffffffffffffffffffffffffffff4e000000bf000000080100002200000025000000f1000000ffffffffba0100001f020000770100000201000017000000f90100006e010000ffffffff42010000c4000000b400000087010000ffffffff1a0000007f010000ffffffffb1000000ffffffff550100005b010000ffffffffffffffffffffffffffffffffd6010000ffffffffffffffffffffffff1a0200006e000000ffffffff1f000000ffffffff80000000c4010000ea010000c80100009d01000065020000ffffffffa8010000ffffffff40010000ffffffff3801000098000000ffffffff410200007c01000028000000ffffffff1b000000fffffffffffffffffffffffffa0100005a01000060010000ca010000ffffffff26010000ffffffffe200000051000000ffffffffffffffffe4000000ffffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+    _Count: 687
+    _Version: 35150
+    _FreeList: -1
+    _FreeCount: 0
+    _Keys:
+    - lgroup
+    - rgroup
+    - lmoustache
+    - rmoustache
+    - negateskin
+    - bigsqcup
+    - oint
+    - bigodot
+    - bigoplus
+    - bigotimes
+    - sum
+    - prod
+    - int
+    - bigcup
+    - bigcap
+    - biguplus
+    - bigwedge
+    - bigland
+    - bigvee
+    - biglor
+    - coprod
+    - widehat
+    - widetilde
+    - surdsign
+    - Gamma
+    - Delta
+    - Theta
+    - Lambda
+    - Xi
+    - Pi
+    - Sigma
+    - Upsilon
+    - Phi
+    - Psi
+    - Omega
+    - alpha
+    - beta
+    - gamma
+    - delta
+    - epsilon
+    - zeta
+    - eta
+    - theta
+    - iota
+    - kappa
+    - lambda
+    - mu
+    - nu
+    - xi
+    - pi
+    - rho
+    - sigma
+    - tau
+    - upsilon
+    - phi
+    - chi
+    - psi
+    - omega
+    - varepsilon
+    - vartheta
+    - varpi
+    - varrho
+    - varsigma
+    - varphi
+    - leftharpoonup
+    - leftharpoondown
+    - rightharpoonup
+    - rightharpoondown
+    - hookright
+    - hookleft
+    - triangleright
+    - triangleleft
+    - ldot
+    - less
+    - l
+    - forwardslash
+    - gtr
+    - g
+    - star
+    - partial
+    - flat
+    - natural
+    - sharp
+    - smile
+    - frown
+    - ell
+    - imath
+    - jmath
+    - wp
+    - vec
+    - floatband
+    - ff
+    - fi
+    - fl
+    - ffi
+    - ffl
+    - grave
+    - acute
+    - tip
+    - breve
+    - bar
+    - Dot
+    - ae
+    - ce
+    - AE
+    - CE
+    - faculty
+    - doublequote
+    - cdqot
+    - numbersign
+    - dollar
+    - percent
+    - ampersand
+    - semiquote
+    - lbrack
+    - rbrack
+    - asttop
+    - plus
+    - comma
+    - varminus
+    - min
+    - ldotp
+    - slash
+    - colon
+    - semicolon
+    - invfaculty
+    - equal
+    - eq
+    - invquestion
+    - question
+    - commercialat
+    - lsqbrack
+    - vardoublequote
+    - odqot
+    - rsqbrack
+    - hat
+    - dot
+    - floatquote
+    - tilde
+    - ddot
+    - minus
+    - cdot
+    - times
+    - ast
+    - div
+    - diamond
+    - pm
+    - mp
+    - oplus
+    - ominus
+    - otimes
+    - oslash
+    - odot
+    - bigcirc
+    - circ
+    - bullet
+    - asymp
+    - equiv
+    - subseteq
+    - supseteq
+    - leq
+    - geq
+    - preceq
+    - succeq
+    - sim
+    - approx
+    - subset
+    - supset
+    - ll
+    - Less
+    - gg
+    - Gtr
+    - prec
+    - succ
+    - leftarrow
+    - rightarrow
+    - uparrow
+    - downarrow
+    - leftrightarrow
+    - nearrow
+    - searrow
+    - simeq
+    - Leftarrow
+    - Rightarrow
+    - Uparrow
+    - Downarrow
+    - Leftrightarrow
+    - swarrow
+    - nwarrow
+    - propto
+    - prime
+    - infty
+    - in
+    - ni
+    - bigtriangleup
+    - triangle
+    - bigtriangledown
+    - forall
+    - exists
+    - neg
+    - lnot
+    - emptyset
+    - Re
+    - Im
+    - top
+    - bot
+    - perp
+    - aleph
+    - cup
+    - cap
+    - uplus
+    - wedge
+    - land
+    - vee
+    - lor
+    - vdash
+    - dashv
+    - lfloor
+    - rfloor
+    - lceil
+    - rceil
+    - lbrace
+    - rbrace
+    - langle
+    - rangle
+    - mid
+    - vert
+    - parallel
+    - Vert
+    - updownarrow
+    - Updownarrow
+    - setminus
+    - backslash
+    - wr
+    - surd
+    - amalg
+    - nabla
+    - smallint
+    - sqcup
+    - sqcap
+    - sqsubseteq
+    - sqsupseteq
+    - dagger
+    - ddagger
+    - pilcrow
+    - clubsuit
+    - diamondsuit
+    - heartsuit
+    - spadesuit
+    - boxdot
+    - boxplus
+    - boxtimes
+    - square
+    - blacksquare
+    - centerdot
+    - lozenge
+    - blacklozenge
+    - circlearrowright
+    - circlearrowleft
+    - rightleftharpoons
+    - leftrightharpoons
+    - boxminus
+    - Vdash
+    - Vvdash
+    - vDash
+    - twoheadrightarrow
+    - twoheadleftarrow
+    - leftleftarrows
+    - rightrightarrows
+    - upuparrows
+    - downdownarrows
+    - upharpoonright
+    - restriction
+    - downharpoonright
+    - upharpoonleft
+    - downharpoonleft
+    - rightarrowtail
+    - leftarrowtail
+    - leftrightarrows
+    - rightleftarrows
+    - Lsh
+    - Rsh
+    - rightsquigarrow
+    - leftrightsquigarrow
+    - looparrowleft
+    - looparrowright
+    - circeq
+    - succsim
+    - gtrsim
+    - gtrapprox
+    - multimap
+    - therefore
+    - because
+    - doteqdot
+    - Doteq
+    - triangleq
+    - precsim
+    - lesssim
+    - lessapprox
+    - eqslantless
+    - eqslantgtr
+    - curlyeqprec
+    - curlyeqsucc
+    - preccurlyeq
+    - leqq
+    - leqslant
+    - lessgtr
+    - backprime
+    - risingdotseq
+    - fallingdotseq
+    - succcurlyeq
+    - geqq
+    - geqslant
+    - gtrless
+    - sqsubset
+    - sqsupset
+    - vartriangleright
+    - vartriangleleft
+    - trianglerighteq
+    - trianglelefteq
+    - blackstar
+    - between
+    - blacktriangledown
+    - blacktriangleright
+    - blacktriangleleft
+    - vartriangle
+    - blacktriangle
+    - triangledown
+    - eqcirc
+    - lesseqgtr
+    - gtreqless
+    - lesseqqgtr
+    - gtreqqless
+    - yen
+    - Rrightarrow
+    - Lleftarrow
+    - measuredangle
+    - sphericalangle
+    - varpropto
+    - smallsmile
+    - smallfrown
+    - Subset
+    - doublesubset
+    - Supset
+    - doublesupset
+    - Cap
+    - doublecap
+    - Cup
+    - doublecup
+    - curlywedge
+    - curlyvee
+    - leftthreetimes
+    - rightthreetimes
+    - subseteqq
+    - supseteqq
+    - bumpeq
+    - Bumpeq
+    - llless
+    - lll
+    - gggtr
+    - ggg
+    - circledR
+    - circledS
+    - pitchfork
+    - dotplus
+    - backsim
+    - backsimeq
+    - maltese
+    - complement
+    - intercal
+    - circledcirc
+    - circledast
+    - circleddast
+    - lvertneqq
+    - gvertneqq
+    - nleq
+    - ngeq
+    - nless
+    - ngtr
+    - nprec
+    - nsucc
+    - lneqq
+    - gneqq
+    - nleqslant
+    - ngeqslant
+    - lneq
+    - gneq
+    - npreceq
+    - nsucceq
+    - precnsim
+    - succnsim
+    - lnsim
+    - gnsim
+    - nleqq
+    - ngeqq
+    - precneqq
+    - succneqq
+    - precnapprox
+    - succnapprox
+    - lnapprox
+    - gnapprox
+    - nsim
+    - ncong
+    - diagup
+    - diagdown
+    - varsubsetneq
+    - varsupsetneq
+    - nsubseteqq
+    - nsupseteqq
+    - subsetneqq
+    - supsetneqq
+    - varsubsetneqq
+    - varsupsetneqq
+    - subsetneq
+    - supsetneq
+    - nsubseteq
+    - nsupseteq
+    - nparallel
+    - nmid
+    - nshortmid
+    - nshortparallel
+    - nvdash
+    - nVdash
+    - nvDash
+    - nVDash
+    - ntrianglerighteq
+    - ntrianglelefteq
+    - ntriangleleft
+    - ntriangleright
+    - nleftarrow
+    - nrightarrow
+    - nLeftarrow
+    - nRightarrow
+    - nLeftrightarrow
+    - nleftrightarrow
+    - divideontimes
+    - varnothing
+    - nexists
+    - Finv
+    - Game
+    - mho
+    - eth
+    - eqsim
+    - beth
+    - gimel
+    - daleth
+    - lessdot
+    - gtrdot
+    - ltimes
+    - rtimes
+    - shortmid
+    - shortparallel
+    - thicksim
+    - thickapprox
+    - approxeq
+    - succapprox
+    - precapprox
+    - curvearrowleft
+    - curvearrowright
+    - digamma
+    - varkappa
+    - Bbbk
+    - hslash
+    - hbar
+    - backepsilon
+    - shortleftarrow
+    - shortrightarrow
+    - shortuparrow
+    - shortdownarrow
+    - Yup
+    - Ydown
+    - Yleft
+    - Yright
+    - varcurlywee
+    - varcurlywedge
+    - minuso
+    - baro
+    - sslash
+    - bbslash
+    - moo
+    - varotimes
+    - varoast
+    - varobar
+    - varodot
+    - varoslash
+    - varobslash
+    - varocirc
+    - varoplus
+    - varominus
+    - varboxast
+    - varboxbar
+    - varboxdot
+    - varboxslash
+    - varboxbslash
+    - varboxcirc
+    - varboxbox
+    - varboxempty
+    - lightning
+    - merge
+    - vartimes
+    - fatsemi
+    - sswarrow
+    - ssearrow
+    - curlywedgeuparrow
+    - curlywedgedownarrow
+    - fatslash
+    - fatbslash
+    - lbag
+    - rbag
+    - varbigcirc
+    - leftrightarroweq
+    - curlyveedownarrow
+    - curlyveeuparrow
+    - nnwarrow
+    - nnearrow
+    - leftslice
+    - rightslice
+    - varolessthan
+    - varogreaterthan
+    - varovee
+    - varowedge
+    - talloblong
+    - interleave
+    - obar
+    - obslash
+    - olessthan
+    - ogreaterthan
+    - ovee
+    - owedge
+    - oblong
+    - inplus
+    - niplus
+    - nplus
+    - subsetplus
+    - supsetplus
+    - subsetpluseq
+    - supsetpluseq
+    - Lbag
+    - Rbag
+    - llbracket
+    - rrbracket
+    - llparenthesis
+    - rrparenthesis
+    - binampersand
+    - bindnasrepma
+    - trianglelefteqslant
+    - trianglerighteqslant
+    - ntrianglelefteqslant
+    - ntrianglerighteqslant
+    - llfloor
+    - rrfloor
+    - llceil
+    - rrceil
+    - leftrightarrowtriangle
+    - leftarrowtriangle
+    - varbigtriangledown
+    - varbigtriangleup
+    - bigparallel
+    - biginterleave
+    - bignplus
+    - recorder
+    - phone
+    - check
+    - pointer
+    - bell
+    - eighthnote
+    - quarternote
+    - halfnote
+    - fullnote
+    - twonote
+    - leftblacktriangle
+    - rightblacktriangle
+    - varlightning
+    - ascnode
+    - descnode
+    - invdiameter
+    - ball
+    - vernal
+    - rnot
+    - male
+    - female
+    - currency
+    - clock
+    - varsmallpropto
+    - varangle
+    - diameter
+    - rightturn
+    - leftturn
+    - leftmoon
+    - rightmoon
+    - earth
+    - mercury
+    - pointleft
+    - pointright
+    - pointup
+    - pointdown
+    - smiley
+    - blacksmiley
+    - sun
+    - frownie
+    - bowtie
+    - bendsquare
+    - kreuz
+    - hexagon
+    - octagon
+    - varhexagon
+    - AC
+    - photon
+    - VHF
+    - hexstar
+    - varhexstar
+    - davidsstar
+    - pentagon
+    - penstar
+    - blackhalfleftcirc
+    - blackhalfrightcirc
+    - halfleftcirc
+    - halfrightcirc
+    - gluon
+    - inve
+    - conjunction
+    - opposition
+    - jupiter
+    - saturn
+    - uranus
+    - neptune
+    - pluto
+    - taurus
+    - gemini
+    - cancer
+    - virgo
+    - libra
+    - scorpio
+    - sagittarius
+    - capricornus
+    - aquarius
+    - pisces
+    - cent
+    - permil
+    - thorn
+    - Thorn
+    - dh
+    - openo
+    - ataribox
+    - boxarrowup
+    - boxarrowdown
+    - boxarrowleft
+    - boxarrowright
+    - varint
+    - iint
+    - iiint
+    - varoint
+    - oiint
+    - brokenvert
+    - comment
+    - play
+    - pause
+    - stop
+    - step
+    - electric
+    - sunshine
+    - moon
+    - cloud
+    - lock
+    - finger
+    - convexstar
+    - time
+    - rocket
+    - flight
+    - placemark
+    - speed
+    - reset
+    - wrench
+    - dumpbin
+    - stack
+    - call
+    - heart
+    - wrongmark
+    - checkmark
+    - cross
+    - speedup
+    - levelup
+    - chat
+    - idea
+    - lookup
+    - key
+    - gift
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    _Values: 38000000390000003a0000003b0000004200000046000000480000004a0000004c0000004e0000005000000051000000520000005300000054000000550000005600000056000000570000005700000060000000620000006500000070000000000100000101000002010000030100000401000005010000060100000701000008010000090100000a0100000b0100000c0100000d0100000e0100000f010000100100001101000012010000130100001401000015010000160100001701000018010000190100001a0100001b0100001c0100001d0100001e0100001f010000200100002101000022010000230100002401000025010000260100002701000028010000290100002a0100002b0100002c0100002d0100002e0100002f0100003a0100003c0100003c0100003d0100003e0100003e0100003f010000400100005b0100005c0100005d0100005e0100005f010000600100007b0100007c0100007d0100007e0100007f0100000b0200000c0200000d0200000e0200000f0200001202000013020000140200001502000016020000170200001a0200001b0200001d0200001e020000210200002202000022020000230200002402000025020000260200002702000028020000290200002a0200002b0200002c0200002d0200002d0200002e0200002f0200003a0200003b0200003c0200003d0200003d0200003e0200003f020000400200005b0200005c0200005c0200005d0200005e0200005f0200007d0200007e0200007f020000000300000103000002030000030300000403000005030000060300000703000008030000090300000a0300000b0300000c0300000d0300000e0300000f030000100300001103000012030000130300001403000015030000160300001703000018030000190300001a0300001b0300001c0300001c0300001d0300001d0300001e0300001f030000200300002103000022030000230300002403000025030000260300002703000028030000290300002a0300002b0300002c0300002d0300002e0300002f0300003003000031030000320300003303000034030000340300003503000038030000390300003a0300003a0300003b0300003c0300003d0300003e0300003f0300003f030000400300005b0300005c0300005d0300005e0300005e0300005f0300005f030000600300006103000062030000630300006403000065030000660300006703000068030000690300006a0300006a0300006b0300006b0300006c0300006d0300006e0300006e0300006f0300007003000071030000720300007303000074030000750300007603000077030000790300007a0300007b0300007c0300007d0300007e0300007f030000000400000104000002040000030400000404000005040000060400000704000008040000090400000a0400000b0400000c0400000d0400000e0400000f04000010040000110400001204000013040000140400001504000016040000160400001704000018040000190400001a0400001b0400001c0400001d0400001e0400001f040000200400002104000022040000230400002404000025040000260400002704000028040000290400002a0400002b0400002b0400002c0400002d0400002e0400002f0400003004000031040000320400003304000034040000350400003604000037040000380400003a0400003b0400003c0400003d0400003e0400003f040000400400004104000042040000430400004404000045040000460400004704000048040000490400004a0400004d0400004e0400004f04000050040000510400005204000053040000540400005504000056040000570400005d0400005e0400005f04000060040000610400006204000062040000630400006304000064040000640400006504000065040000660400006704000068040000690400006a0400006b0400006c0400006d0400006e0400006e0400006f0400006f0400007204000073040000740400007504000076040000770400007a0400007b0400007c0400007d0400007e0400007f040000000500000105000002050000030500000405000005050000060500000705000008050000090500000a0500000b0500000c0500000d0500000e0500000f050000100500001105000012050000130500001405000015050000160500001705000018050000190500001a0500001b0500001c0500001d0500001e0500001f050000200500002105000022050000230500002405000025050000260500002705000028050000290500002a0500002b0500002c0500002d0500002e0500002f050000300500003105000032050000330500003405000035050000360500003705000038050000390500003a0500003b0500003c0500003d0500003e0500003f050000400500006005000061050000660500006705000068050000690500006a0500006b0500006c0500006d0500006e0500006f0500007005000071050000730500007405000075050000760500007705000078050000790500007a0500007b0500007c0500007d0500007e0500007f050000000600000106000002060000030600000406000005060000060600000706000008060000090600000a0600000b0600000c0600000d0600000e0600000f060000100600001106000012060000130600001406000015060000160600001706000018060000190600001a0600001b0600001c0600001d0600001e0600001f060000200600002106000022060000230600002406000025060000260600002706000028060000290600002a0600002b0600002c0600002d0600002e0600002f060000300600003106000032060000330600003406000035060000360600003706000038060000390600003a0600003b0600003c0600003d0600003e0600003f060000400600004106000042060000430600004406000045060000460600004706000048060000490600004a0600004b0600004c0600004d0600004e0600004f06000050060000510600005206000053060000540600005506000056060000570600005d0600005e0600006006000061060000660600006706000070060000060700000707000008070000090700000a0700000b0700000c0700000d0700000e0700000f070000100700001107000012070000130700001407000015070000160700001707000018070000190700001a0700001b0700001c0700001d0700001e0700001f07000021070000220700002407000025070000260700002707000028070000290700002a0700002b0700002c0700002d0700002e0700002f0700003107000035070000360700003707000038070000390700003a0700003a0700004007000041070000420700004307000044070000450700004707000048070000490700004a0700005007000055070000560700005707000058070000590700005a0700005b0700005c0700005d0700005e0700005f070000600700006107000062070000630700006407000065070000660700006707000068070000690700006a0700006b0700006c0700006d0700006e0700006f070000700700007107000072070000730700007407000075070000760700007c0700007f070000001000000110000002100000031000000410000005100000061000000710000008100000091000000a1000000b1000000c1000000d1000000e1000000f100000101000001110000012100000131000001410000015100000161000001710000018100000191000001a1000001b1000001c1000001d1000001e1000001f10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  charMapData:
+    warnOnSetIfExist: 1
+    _Buckets: 0700000008000000090000000a0000000b0000000c0000000d0000000e000000170000000f00000001000000ffffffff1a0000001c0000001b00000018000000ffffffff150000001d000000160000001e0000001f000000190000000000000012000000020000001300000014000000ffffffffffffffffffffffffffffffffffffffff03000000040000000500000006000000
+    _HashCodes: 3c0000002f0000003e0000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002e0000003a0000003b0000003d0000003f000000400000005b0000005d0000002d0000007e000000600000007b0000007d0000007c0000005c0000005e0000005f0000000000000000000000000000000000000000000000
+    _Next: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff11000000ffffffffffffffffffffffffffffffffffffffff100000000000000000000000000000000000000000000000
+    _Count: 32
+    _Version: 1700
+    _FreeList: -1
+    _FreeCount: 0
+    _Keys: 3c002f003e002100220023002400250026002700280029002a002b002c002e003a003b003d003f0040005b005d002d007e0060007b007d007c005c005e005f0000000000000000000000
+    _Values: 3c0100003d0100003e0100002102000022020000230200002402000025020000260200002702000028020000290200002a0200002b0200002c0200002e0200003a0200003b0200003d0200003f020000400200005b0200005d02000000030000180300003003000066030000670300006a0300006e0300005e0c00005f0f00000000000000000000000000000000000000000000
+  preferences:
+    warnOnSetIfExist: 0
+    _Buckets: ffffffff1a000000ffffffff0b000000ffffffff14000000ffffffff1d000000050000000c00000011000000090000001700000007000000ffffffff0e000000ffffffff1c000000160000000100000006000000ffffffff13000000ffffffff0a00000019000000ffffffffffffffffffffffff1b000000ffffffffffffffffffffffff10000000ffffffff0d00000012000000
+    _HashCodes: 80dc6f145b421358b6a23d5067c1c9371a069f13b168b81e48441f66c049650d70a3a407c688a21cefc80f6312c9454370f6984799bf1c184e3e450224989462dcad801d4172ae093d2297742fd9d1734411471470d8f7099edbae45dbeb455ffd8e535fef5bc67886481b5fd5aca3358f17c36416cac46500000000000000000000000000000000000000000000000000000000
+    _Next: ffffffffffffffffffffffffffffffff00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff02000000ffffffffffffffffffffffff03000000ffffffffffffffff080000000f00000004000000ffffffffffffffffffffffffffffffff15000000ffffffffffffffff1800000000000000000000000000000000000000000000000000000000000000
+    _Count: 30
+    _Version: 185
+    _FreeList: -1
+    _FreeCount: 0
+    _Keys:
+    - SpaceWidth
+    - LineHeight
+    - GlueRatio
+    - ExtentPadding
+    - ScriptFactor
+    - NestedScriptFactor
+    - AxisHeight
+    - LineThickness
+    - NegateMargin
+    - DoubleNegateOffset
+    - MatrixMargin
+    - OverUnderMargin
+    - FractionMargin
+    - NumeratorShift
+    - NumeratorShiftNoLine
+    - NumeratorNarrow
+    - DenominatorShift
+    - DenominatorNarrow
+    - SupDrop
+    - SubDrop
+    - SupMin
+    - SupMinCramped
+    - SupMinNarrowed
+    - SubMinNoSup
+    - SubMinOnSup
+    - BigOpMargin
+    - BigOpUpShift
+    - BigOpUpperGap
+    - BigOpLowShift
+    - BigOpLowerGap
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    _Values:
+    - 0.35
+    - 0.7
+    - 0.033
+    - 0.032
+    - 0.56
+    - 0.38
+    - 0.312
+    - 0.044
+    - 0.3
+    - 0.054
+    - 0.4
+    - 0.09
+    - 0.2
+    - 0.143
+    - 0.33
+    - 0.11
+    - 0.613
+    - 0.099
+    - 0.135
+    - 0.25
+    - 0.28
+    - 0.2
+    - 0.24
+    - 0.1
+    - 0.18
+    - 0.09
+    - 0.111
+    - 0.102
+    - 0.1
+    - 0.16
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  defaultTypefaces:
+    typefaces: 020000000100000001000000020000000200000000000000
+  glueTable: 00000000030000000300000005000000040000000100000001000000030000000200000000000000030000000000000003000000020000000200000001000000010000000200000002000000000000000300000003000000010000000100000001000000010000000100000002000000020000000000000005000000020000000100000001000000010000000100000001000000030000000300000000000000040000000200000001000000010000000100000001000000010000000200000001000000000000000100000001000000010000000100000001000000010000000000000002000000020000000000000001000000010000000100000001000000010000000000000001000000020000000200000000000000030000000200000002000000030000000200000002000000020000000300000004000000000000000200000002000000020000000300000001000000020000000200000004000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  ConfigIDs:
+  - cmex
+  - cmmi
+  - cmr
+  - cmsy
+  - msam
+  - msbm
+  - stmary
+  - wasy
+  - bbold
+  - cmbx
+  - cmfi
+  - cmss
+  - cmtt
+  - eufm
+  - eurm
+  - opens
+  - iconic
+  FontIDs:
+  - -1 (Use Math Typefaces)
+  - 0 - cmex.ttf
+  - 1 - cmmi.ttf
+  - 2 - cmr.ttf
+  - 3 - cmsy.ttf
+  - 4 - msam.ttf
+  - 5 - msbm.ttf
+  - 6 - stmary.ttf
+  - 7 - wasy.ttf
+  - 8 - bbold.ttf
+  - 9 - cmbx.ttf
+  - 10 - cmfi.ttf
+  - 11 - cmss.ttf
+  - 12 - cmtt.ttf
+  - 13 - eufm.ttf
+  - 14 - eurm.ttf
+  - 15 - opens.ttf
+  - 16 - iconic.ttf
+  FontIDsGUI:
+  - m_Text: -1 (Use Math Typefaces)
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 0 - cmex.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 1 - cmmi.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 2 - cmr.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 3 - cmsy.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 4 - msam.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 5 - msbm.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 6 - stmary.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 7 - wasy.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 8 - bbold.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 9 - cmbx.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 10 - cmfi.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 11 - cmss.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 12 - cmtt.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 13 - eufm.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 14 - eurm.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 15 - opens.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  - m_Text: 16 - iconic.ttf
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  FontIndexs: ffffffff000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f00000010000000
+  watchedMaterial:
+  - {fileID: 2100000, guid: 9d473469be5a9fc448e911362f79b8a9, type: 2}
+  - {fileID: 2100000, guid: 4d479d4a46c425c42885046b5fa0ccde, type: 2}
+  - {fileID: 2100000, guid: 73dd7443412082c409b2a02842af61a1, type: 2}
+  - {fileID: 2100000, guid: d7c5a2af90e37fd4a9dc11587ff50f36, type: 2}
+  - {fileID: 2100000, guid: 9fb82840f4e3d604081053d86702b0a8, type: 2}
+  - {fileID: 2100000, guid: 3d8751f19f0712c4d96402698f5b503d, type: 2}
