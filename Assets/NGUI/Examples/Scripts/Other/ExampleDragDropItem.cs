@@ -18,7 +18,7 @@ public class ExampleDragDropItem : UIDragDropItem
 	/// Drop a 3D game object onto the surface.
 	/// </summary>
 
-	protected  override void OnDragDropRelease (GameObject surface)
+	protected override void OnDragDropRelease (GameObject surface)
 	{
 		if (surface != null)
 		{

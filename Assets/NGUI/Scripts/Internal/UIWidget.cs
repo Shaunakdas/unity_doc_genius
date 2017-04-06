@@ -588,7 +588,7 @@ public class UIWidget : UIRect
 		get
 		{
 			Material mat = material;
-			return (mat != null & mat.HasProperty("_MainTex")) ? mat.mainTexture : null;
+			return (mat != null) ? mat.mainTexture : null;
 		}
 		set
 		{
