@@ -22,6 +22,7 @@ GameObject:
   - 114: {fileID: 114000012235873688}
   - 65: {fileID: 65000013854704200}
   - 114: {fileID: 114000010304813024}
+  - 114: {fileID: 114000013651660694}
   m_Layer: 8
   m_Name: Container
   m_TagString: Untagged
@@ -54,13 +55,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000012374558130}
+  - 114: {fileID: 114000013865272246}
   m_Layer: 8
   m_Name: DropZoneCellPrefab
-  m_TagString: Untagged
+  m_TagString: DropZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4000011560892946
 Transform:
   m_ObjectHideFlags: 1
@@ -112,7 +114,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 300, y: 84, z: 1}
+  m_Size: {x: 60, y: 60, z: 1}
   m_Center: {x: 0, y: -50, z: 0}
 --- !u!114 &114000010304813024
 MonoBehaviour:
@@ -177,14 +179,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 1
-  mWidth: 300
-  mHeight: 84
+  mWidth: 60
+  mHeight: 60
   mDepth: 0
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.5714285
+  aspectRatio: 1
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -215,3 +217,60 @@ MonoBehaviour:
   correctValueList: []
   correctToggleList: 
   childButtonType: 0
+--- !u!114 &114000013651660694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010289062514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e2747e3775af504da1a4d5a46c5a1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  method: 0
+  style: 1
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+    - time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ignoreTimeScale: 1
+  delay: 0
+  duration: 1
+  steeperCurves: 0
+  tweenGroup: 0
+  useFixedUpdate: 0
+  onFinished: []
+  eventReceiver: {fileID: 0}
+  callWhenFinished: 
+  from: 0.28
+  to: 1
+--- !u!114 &114000013865272246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012809474528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ce6b62c57f94ae1854a4929baf8572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextInputPF: {fileID: 1000012137852628, guid: 056b9a710a75747a686cdfa6ede00a9b,
+    type: 2}
+  QuestionStepGO: {fileID: 0}
+  DropHolderGO: {fileID: 1000011512674838}
+  ContainerGO: {fileID: 1000010289062514}
+  currentSprite: {fileID: 0}

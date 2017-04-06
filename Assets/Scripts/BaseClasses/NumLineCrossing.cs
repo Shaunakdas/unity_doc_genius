@@ -8,6 +8,8 @@ public class NumLineCrossing : MonoBehaviour {
 	public GameObject ToggleGO;
 	public UISprite currentSprite;
 	public GameObject ContainerGO;
+
+	public GameObject QuestionStepGO;
 	public int correctInt{ get; set; }
 	public bool actionRequired{ get; set; }
 	void Start () {

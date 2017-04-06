@@ -25,7 +25,9 @@ public class ToggleButton : MonoBehaviour{
 		//gameObject.SetActive(correctBool);
 	}
 	public void correctAnimation (){
+		Debug.Log ("Correct Animation");
 	}
 	public void incorrectAnimation(){
+		Debug.Log ("InCorrect Animation");
 	}
 }

@@ -85,7 +85,7 @@ public class TextImporter : MonoBehaviour {
 			foreach (HtmlNode line in line_list) {
 				//					Debug.Log ("line.InnerHtml:  " + line.InnerHtml);
 				//Iterating through each line node in question_step node
-
+				Debug.Log("Line inner html is "+line.InnerHtml);
 				switch (line.Attributes [attr_type].Value) {
 				case "text":
 					Debug.Log ("Adding line of type text with content" + line.InnerText);
@@ -149,8 +149,13 @@ public class TextImporter : MonoBehaviour {
 						case "drop_zone":
 						//Add Gameobject "DropZoneCellPrefab" of answer cell.Attributes[attr_answer].Value
 							Debug.Log ("Adding checkbox of Answer " + cell.Attributes [attr_answer].Value);
-							GameObject DropZoneCellGO = instantiateNGUIGameObject (DropZoneCellPrefab, TableLineGO.transform);
-						//Adding Input buttons to Input List
+//							GameObject DropZoneCellGO = instantiateNGUIGameObject (DropZoneCellPrefab, TableLineGO.transform);
+							GameObject DropZoneCellGO = NGUITools.AddChild (TableLineGO,DropZoneCellPrefab);
+							DropZoneCellGO.GetComponent<DropZone>().QuestionStepGO = QuestionStepGO;
+							DropZoneCellGO.GetComponent<DropZone> ().actionRequired = true;
+							DropZoneCellGO.GetComponent<DropZone> ().correctText = cell.Attributes [attr_answer].Value;
+							targetInputObjectList.Add (DropZoneCellGO);
+							//Adding Input buttons to Input List
 							break;
 
 						case "drag_source":
@@ -195,6 +200,7 @@ public class TextImporter : MonoBehaviour {
 					Debug.Log ("There are " + numline_toggle_cell_list.Count + " nodes of type: cell");
 
 					int labelToggleCount = int.Parse (line.Attributes [attr_label_count].Value);
+					NumLineToggleTableGO.GetComponent<UITable>().columns = 2*labelToggleCount;
 					for (int i = 0; i < labelToggleCount; i++) {
 						//Setting Number Line view
 						GameObject NumLineCrossGO = instantiateNGUIGameObject (NumLineCrossTogglePrefab, NumLineToggleTableGO.transform);
@@ -202,7 +208,7 @@ public class TextImporter : MonoBehaviour {
 						instantiateNGUIGameObject (NumLineStraightPrefab, NumLineToggleTableGO.transform);
 						//Setting Number line input object list
 						targetInputObjectList.Add(NumLineCrossGO.GetComponent<NumLineCrossing>().ToggleGO);
-
+						NumLineCrossGO.GetComponent<NumLineCrossing>().ToggleGO.GetComponent<ToggleButton>().QuestionStepGO = QuestionStepGO;
 					}
 
 
@@ -246,6 +252,8 @@ public class TextImporter : MonoBehaviour {
 						instantiateNGUIGameObject (NumLineStraightPrefab, NumLineTableGO.transform);
 						//Setting Number line input object list
 						targetInputObjectList.Add(NumLineCrossGO);
+						NumLineCrossGO.GetComponent<NumLineCrossing>().QuestionStepGO = QuestionStepGO;
+
 					}
 
 
@@ -316,7 +324,7 @@ public class TextImporter : MonoBehaviour {
 					break;
 				}
 
-
+				Debug.Log ("Finishing Line"+line.InnerHtml);
 			}
 			Debug.Log ("Finished Line");
 			return true;

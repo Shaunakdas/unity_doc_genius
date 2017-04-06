@@ -52,7 +52,7 @@ public class UserInputValidator : MonoBehaviour {
 			getSprite(currentInputObject).GetComponent<TweenAlpha> ().PlayForward ();
 		} else {
 			foreach (GameObject inputObject in targetInputObjectList) {
-				Debug.Log ("Activating multiple Inputs"+getSprite(inputObject).gameObject.name);
+				Debug.Log ("Activating multiple Inputs"+getSprite(inputObject).gameObject.GetComponent<TweenAlpha> ().style.ToString());
 				getSprite(inputObject).GetComponent<TweenAlpha> ().PlayForward();
 			}
 		}
@@ -66,6 +66,7 @@ public class UserInputValidator : MonoBehaviour {
 
 	//Button Triggers
 	public void SubmitButtonTrigger(){
+		Debug.Log ("Submit Buton Trigger");
 		if (targetInputObjectList.Count > 0) {
 			//Wait for solution if incorrect
 			ValidateQuestionStep ();
@@ -88,6 +89,7 @@ public class UserInputValidator : MonoBehaviour {
 
 	//Validating Scripts
 	public void ValidateQuestionStep(){
+		Debug.Log ("Validating Question Step");
 		if (currentQuestionStep.GetComponent<QuestionStep>().SingleCorrect) {
 			ValidateInput (currentInputObject);
 			removeInputFromList (currentInputObject);
@@ -110,7 +112,7 @@ public class UserInputValidator : MonoBehaviour {
 			input.GetComponent<ToggleButton> ().postValidation();
 			break;
 		case "DropZone":
-//			input.GetComponent<DropZone> ().postValidation();
+			input.GetComponent<DropZone> ().postValidation();
 			break;
 		case "DragSource":
 //			input.GetComponent<DragSource> ().postValidation();
@@ -145,6 +147,9 @@ public class UserInputValidator : MonoBehaviour {
 		case "DragSource":
 			currentQuestionStep = input.GetComponent<DragSource> ().QuestionStepGO;
 			break;
+		case "NumLineCrossing":
+			currentQuestionStep = input.GetComponent<NumLineCrossing> ().QuestionStepGO;
+			break;
 		}
 	}
 	public GameObject getSprite(GameObject input){
@@ -158,7 +163,7 @@ public class UserInputValidator : MonoBehaviour {
 			return input.GetComponent<ToggleButton> ().currentSprite.gameObject;
 
 		case "DropZone":
-			return input.GetComponent<DropZone> ().currentSprite.gameObject;
+			return input.GetComponent<DropZone> ().ContainerGO;
 		
 		case "DragSource":
 			return input.GetComponent<DragSource> ().currentSprite.gameObject;
