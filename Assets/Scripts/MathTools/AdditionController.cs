@@ -37,23 +37,11 @@ public class AdditionController {
 		}
 		return columnwiseIntIndex;
 	}
-
-
-//	public List<int?> straightenList(List<List<int?>> numberLocationList){
-//		return numberLocationList.SelectMany (x => x).ToList ();
-//	}
-//	public List<int?> straightenList(){
-//		return numberLocationList.SelectMany (x => x).ToList ();
-//	}
-
-
+		
 	public List<int?> setNumberLocationList(List<int> currInputList,int currTableColumnCount){
 		//Get numberLocationList
-		List<int?> currNumberLocationList = new List<int?>(0);
-		//Set CarryIntList:numberLocationList[0] of all blank elements and length currTableColumnCount
-
-
-		return currNumberLocationList;
+		inputList = currInputList;
+		return setNumberLocationList ();
 	}
 	public List<int?> setNumberLocationList(){
 		//Adding 2 to inputList.Count to handle carry row and sum row
@@ -88,8 +76,9 @@ public class AdditionController {
 	}
 
 
-	public List<int?> updateNumberLocationList(List<List<int?>> currNumberLocationList,int operationColumn){
-		
+	public List<int?> updateNumberLocationList(List<int?> currNumberLocationList,int operationColumn){
+		singleNumberLocationList = currNumberLocationList;
+		singleNumberLocationList = updateNumberLocationList(operationColumn);
 		//Get updated numberLocationList after addition operation is done on column operationColumn
 		//First get element of SumRow
 		//Get element of CarryRow
@@ -113,18 +102,5 @@ public class AdditionController {
 			singleNumberLocationList [sumCellIndex] = null;
 		return singleNumberLocationList;
 	}
-
-
-	public void getCarryIntList(List<List<int?>> currNumberLocationList){
-		//Check for null value by num.HasValue property
-
-	}
-	public int getCarryInt(List<int> columnNumberList){
-		//Get carry to next column based on all numbers in previous columns
-		return 0;
-	}
-	public int getSumUnitPlace(List<int> columnNumberList){
-		//Get unit place of sum based on all numbers in curent columns
-		return 0;
-	}
+		
 }
