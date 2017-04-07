@@ -22,7 +22,7 @@ public class DropZone : MonoBehaviour{
 				correctAnimation ();
 			} else {
 				//Wrong object was dropped
-				incorrectAnimation ();
+				incorrectAnimation ();  
 			}
 		} else if (actionRequired) {
 			//An object was needed to be dropped here.
