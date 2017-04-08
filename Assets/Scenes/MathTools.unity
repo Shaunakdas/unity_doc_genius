@@ -212,6 +212,7 @@ GameObject:
   - 114: {fileID: 597898385}
   - 114: {fileID: 597898386}
   - 114: {fileID: 597898387}
+  - 114: {fileID: 597898388}
   m_Layer: 8
   m_Name: UI Root
   m_TagString: Untagged
@@ -403,7 +404,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 597898379}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4012e422226b448f9c2fd52ba4ddebc, type: 3}
   m_Name: 
@@ -411,7 +412,22 @@ MonoBehaviour:
   NumberTableGO: {fileID: 765239043}
   TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
     type: 2}
-  InputList: 0c00000001000000
+  InputList: d9030000620000000b04000006000000
+--- !u!114 &597898388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597898379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae8d9bba9f55c4cbbb8cea65b5a01428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberTableGO: {fileID: 765239043}
+  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
+    type: 2}
+  InputList: 440000006f000000
 --- !u!114 &597898392
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ public class AdditionAnimator : MonoBehaviour {
 	public GameObject NumberTableGO;
 	public GameObject TextCellPrefab;
 	public List<int> InputList;
-	public List<int> singleNumberLocationList{ get; set; }
+	public List<int?> singleNumberLocationList{ get; set; }
 	// Use this for initialization
 	void Start () {
 		if (InputList.Count > 0) {

@@ -6,6 +6,7 @@ public class AdditionController {
 	//25+3=24: 25-Augend, 3-Addend, 75-Sum
 	//For holding input integer list for addition
 	public List<int> inputList{ get; set; }
+	public int rowCount{ get; set;}
 	//For holding integer location during addition
 	//public List<List<int?>> numberLocationList{ get; set; }
 	public List<int?> singleNumberLocationList{ get; set; }
@@ -17,6 +18,7 @@ public class AdditionController {
 		tableColumnCount = getTableColumnCount ();
 		singleNumberLocationList = new List<int?> ();
 		setNumberLocationList ();
+		rowCount = inputList.Count + 1;
 	}
 	public int getTableColumnCount(){
 		//Get Column Count for UITable 
@@ -25,13 +27,13 @@ public class AdditionController {
 		return columnCount+1;
 	}
 	public List<int> getColumnwiseIntIndex(int columnIndex){
-		Debug.Log ("getColumnwiseIntIndex");
+//		Debug.Log ("getColumnwiseIntIndex");
 		List<int> columnwiseIntIndex = new List<int>();
 		int index =  tableColumnCount - columnIndex-1;
-		Debug.Log ("getColumnwiseIntIndex"+index+singleNumberLocationList.Count);
+//		Debug.Log ("getColumnwiseIntIndex"+index+singleNumberLocationList.Count);
 		while (index < singleNumberLocationList.Count) {
 			if (singleNumberLocationList [index].HasValue)
-				Debug.Log ("ColumnwiseIntIndex for " + columnIndex + " is " + index);
+//				Debug.Log ("ColumnwiseIntIndex for " + columnIndex + " is " + index);
 				columnwiseIntIndex.Add (index);
 			index = index + tableColumnCount;
 		}
@@ -86,13 +88,16 @@ public class AdditionController {
 	}
 	public List<int?> updateNumberLocationList(int operationColumn){
 		//OperationColumn is from right hand side
-		int rowCount = inputList.Count + 1;
+		rowCount = inputList.Count + 1;
 		int sumCellIndex = (rowCount * tableColumnCount) + (tableColumnCount - operationColumn-1);
 		int carryCellIndex = tableColumnCount - operationColumn - 2;
+		Debug.Log ("Changing int with" + sumCellIndex + " " + carryCellIndex);
 		int sum=0;
 		foreach (int index in getColumnwiseIntIndex(operationColumn)) {
-			if(singleNumberLocationList [index].HasValue)
+			if (singleNumberLocationList [index].HasValue) {
+				Debug.Log ("Adding at column" + operationColumn + " is " + index);
 				sum = sum + (int)singleNumberLocationList [index];
+			}
 		}
 		Debug.Log ("Sum of column" + operationColumn + " is " + sum);
 		singleNumberLocationList [sumCellIndex] = int.Parse(sum.ToString ().Substring(sum.ToString ().Count() - 1));
