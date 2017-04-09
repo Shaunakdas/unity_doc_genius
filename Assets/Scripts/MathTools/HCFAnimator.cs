@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 public class HCFAnimator : MonoBehaviour {
 	public GameObject NumberTableGO;
-	public GameObject AnswerGO;
+	public GameObject AnswerGO,MessageGO;
 	public GameObject TextCellPrefab;
 	public GameObject TableRowPrefab;
 	public List<int> inputList;
 	public List<int> commonFactorList;
+	public List<int> commonFactorMinCountList;
 	public List<List<int>> inputFactorList;
 	public List<List<GameObject>> inputFactorGOList;
 
@@ -17,10 +19,12 @@ public class HCFAnimator : MonoBehaviour {
 			//for Debugging purpose
 			initiateinputNumber(inputList);
 		}
+
 	}
 	public void initiateinputNumber(List<int> currInputList){
 		HCFController HCFCtrl = new HCFController(currInputList);
 		//Updating NumberLocationList with new inputList
+		inputFactorGOList = new List<List<GameObject>>();
 		inputFactorList = HCFCtrl.inputFactorList;
 		NumberTableGO.GetComponent<UIGrid> ().maxPerLine = 3;
 		animationStepList (HCFCtrl);
@@ -32,14 +36,14 @@ public class HCFAnimator : MonoBehaviour {
 		for(int i = 0;i<inputList.Count;i++){
 			primeFactorAnimationStep (HCFCtrl,i);
 		}
-		//Generating prime factors for each input in input list
-		for(int i = 0;i<inputList.Count;i++){
-			checkPrimeFactorPowerAnimationStep (HCFCtrl,i);
+		commonFactorMinCountList = new List<int> ();
+		commonFactorList = inputFactorList.SelectMany (d => d).ToList ().Distinct ().ToList ();
+		//Highlighting prime factors for each input in input list
+		foreach(int prime in commonFactorList){
+			checkPrimeFactorPowerAnimationStep (HCFCtrl,prime);
 		}
-		//Generating Product of all common factors
-		for(int i = 0;i<inputList.Count;i++){
-			generateHCF (HCFCtrl);
-		}
+		generateHCF ();
+//		checkPrimeFactorPowerAnimationStep (HCFCtrl,2);
 //		string answer = "";
 //		answer += "Prime factors of " + inputNumber.ToString () + " : ";
 //		List<int> factorList = HCFCtrl.primeFactorProcessList [processStepCount - 1];;
@@ -84,8 +88,23 @@ public class HCFAnimator : MonoBehaviour {
 			}
 			primeHighlightIndexList.Add (highlightRow);
 		}
+		int minCount = HCFCtrl.getPrimeMinimumCount (inputFactorList, prime);
+		string message = "Minimum amout of factor " + prime + ": is " + minCount;
+		for (int i = 0; i < minCount; i++) {
+			commonFactorMinCountList.Add (prime);
+		}
+		MessageGO.GetComponent<UILabel>().text = message;
+		string answerText = "";
+
+		commonFactorMinCountList.ForEach (item => answerText = answerText + item.ToString () + " X ");
+		AnswerGO.GetComponent<UILabel>().text = answerText;
 	}
-	public void generateHCF (HCFController HCFCtrl){
+	public int generateHCF (){
+		int HCF = 1;
+		commonFactorMinCountList.ForEach (item => HCF = HCF*item);
+		string answerMessage = AnswerGO.GetComponent<UILabel> ().text;
+		AnswerGO.GetComponent<UILabel> ().text = answerMessage + "1 = "+HCF.ToString ();
+		return HCF;
 	}
 	public void updateAnswerGO(GameObject AnswerGO){
 

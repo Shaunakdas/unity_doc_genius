@@ -8,6 +8,8 @@ public class HCFController {
 	public List<List<int>> inputFactorList;
 	//For Table Column count
 	public int tableColumnCount{get; set;}
+	public HCFController(){
+	}
 	public HCFController(List<int> currInputList){
 		inputList = currInputList;
 		inputFactorList = getInputFactorList (currInputList);
@@ -46,7 +48,7 @@ public class HCFController {
 		int primeMinimumCount;
 		List<int> primeCountList = new List<int>();
 		for (int i = 0; i < inputFactorList.Count; i++) {
-			primeCountList[i]=0;
+			primeCountList.Add(0);
 			for (int j = 0; j < inputFactorList [i].Count; j++) {
 				if (inputFactorList [i] [j] == prime)
 					primeCountList[i]++;
