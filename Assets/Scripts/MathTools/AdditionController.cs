@@ -107,5 +107,23 @@ public class AdditionController {
 			singleNumberLocationList [sumCellIndex] = null;
 		return singleNumberLocationList;
 	}
-		
+	public List<int> getProductList(List<int?> singleNumberLocationList){
+
+		List<int> productList = new List<int>();
+		int columnCount = tableColumnCount;
+		int start = columnCount * (inputList.Count + 1);
+		int end = start + columnCount;
+		for (int rowCount = (inputList.Count + 2); rowCount < (inputList.Count + 2 + inputList [1].ToString ().Length); rowCount++) {
+			string productText="";
+			for (int column = 0; column < columnCount; column++) {
+				if (singleNumberLocationList [columnCount*rowCount + column].HasValue)
+					Debug.Log ("character is " + singleNumberLocationList [columnCount*rowCount + column] + "at " + rowCount + " " + column);
+				productText += ""+singleNumberLocationList [columnCount*rowCount + column];
+			}
+
+			productList.Add (int.Parse (productText));
+			Debug.Log ("character is " + productText + "at " + rowCount);
+		}
+		return productList;
+	}
 }
