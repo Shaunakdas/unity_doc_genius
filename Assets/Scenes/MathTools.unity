@@ -213,12 +213,6 @@ GameObject:
   - 114: {fileID: 597898386}
   - 114: {fileID: 597898387}
   - 114: {fileID: 597898388}
-  - 114: {fileID: 597898389}
-  - 114: {fileID: 597898390}
-  - 114: {fileID: 597898391}
-  - 114: {fileID: 597898393}
-  - 114: {fileID: 597898394}
-  - 114: {fileID: 597898395}
   m_Layer: 8
   m_Name: UI Root
   m_TagString: Untagged
@@ -427,64 +421,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 597898379}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae8d9bba9f55c4cbbb8cea65b5a01428, type: 3}
+  m_Script: {fileID: 11500000, guid: 34a4e3d61b45d45e29647350af0b27d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberTableGO: {fileID: 765239043}
-  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
-    type: 2}
-  InputList: 4400000059000000
---- !u!114 &597898389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597898379}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90b3b3999665c47279b2c3167f5ce813, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberTableGO: {fileID: 765239043}
-  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
-    type: 2}
-  InputList: 70000000c9000000
---- !u!114 &597898390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597898379}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21f03524abfc948f390df0f61a60c052, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberTableGO: {fileID: 765239043}
-  AnswerGO: {fileID: 883935244}
-  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
-    type: 2}
-  inputNumber: 4
---- !u!114 &597898391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597898379}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50dbe88dce7934d3db9ede9097f94b9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberTableGO: {fileID: 765239043}
-  AnswerGO: {fileID: 883935244}
-  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
-    type: 2}
-  TableRowPrefab: {fileID: 1000010054774048, guid: fd5260aaecdce45578af37bff4783b9b,
-    type: 2}
-  inputNumber: 20
+  NumberTableGO: {fileID: 0}
+  TextCellPrefab: {fileID: 0}
+  AnswerGO: {fileID: 0}
+  InputNumber: 0
 --- !u!114 &597898392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,63 +442,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StepQuestionLinePF: {fileID: 0}
---- !u!114 &597898393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597898379}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e916378ef66fb4749afed26429c1a90f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberTableGO: {fileID: 765239043}
-  AnswerGO: {fileID: 883935244}
-  MessageGO: {fileID: 1871042691}
-  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
-    type: 2}
-  TableRowPrefab: {fileID: 1000010054774048, guid: fd5260aaecdce45578af37bff4783b9b,
-    type: 2}
-  inputList: 280000005000000014000000
-  commonFactorList: 
-  commonFactorMinCountList: 
---- !u!114 &597898394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597898379}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ec2b155c448540ea8b2f3d02161aba7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberTableGO: {fileID: 765239043}
-  AnswerGO: {fileID: 883935244}
-  MessageGO: {fileID: 1871042691}
-  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
-    type: 2}
-  TableRowPrefab: {fileID: 1000010054774048, guid: fd5260aaecdce45578af37bff4783b9b,
-    type: 2}
-  inputList: 140000002800000050000000
-  commonFactorList: 
-  commonFactorMinCountList: 
---- !u!114 &597898395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 597898379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886861b2492134b07815f9ffc13283c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberTableGO: {fileID: 765239043}
-  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
-    type: 2}
-  InputList: 64000000c80000000a000000
 --- !u!1 &765239043
 GameObject:
   m_ObjectHideFlags: 0
