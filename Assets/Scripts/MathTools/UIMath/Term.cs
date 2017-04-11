@@ -3,12 +3,16 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 namespace UIMath{
-	public struct Term {
+	public struct Term :IExpressionItem {
 		List<ITermItem> _termItemList;
 		public List<ITermItem> TermItemList
 		{
 			get { return _termItemList; }
 			private set { _termItemList = value; }
+		}
+		public Term()
+		{
+			_termItemList = new List<ITermItem>();
 		}
 		public Term(long value)
 		{
@@ -25,14 +29,18 @@ namespace UIMath{
 			_termItemList = new List<ITermItem>();
 			_termItemList.Add(termVariable);
 		}
-//		public Term(List<TermCoefficient> termCoefficientList)
-//		{
-//			_termItemList = new List<ITermItem>(termCoefficientList);
-//		}
-//		public Term(List<TermVariable> termVariableList)
-//		{
-//			_termItemList = new List<ITermItem>(termVariableList);
-//		}
+		public Term(List<ITermItem> termItemList)
+		{
+			_termItemList = new List<ITermItem>(termItemList);
+		}
+		public void AddTermCoefficient(TermCoefficient termCoefficient)
+		{
+			_termItemList.Add(termCoefficient);
+		}
+		public void AddTermVariable(TermVariable termVariable)
+		{
+			_termItemList.Add(termVariable);
+		}
 		public bool Equals(Term other)
 		{
 			if (other == null)
@@ -65,20 +73,51 @@ namespace UIMath{
 			}
 			return coefficientValue;
 		}
-		public long ValueAtVariableValue(List<long> valueList)
+		public long Value(List<long> valueList)
 		{
 			long variableValue = 1;
 			int indexer = 0;
 			foreach (ITermItem iTermItem in TermItemList) {
 				int index = TermItemList.IndexOf (iTermItem);
 				if (iTermItem.GetType () == typeof(UIMath.TermVariable)) {
-					variableValue *= iTermItem.Value (valueList [indexer]);
+					variableValue *= iTermItem.Value(valueList[indexer]);
 					indexer++;
 				} else {
 					variableValue *= iTermItem.Value ();
 				}
 			}
 			return variableValue;
+		}
+
+		//Work pending
+		public long Value()
+		{	
+			return (long)0;
+
+		}
+		public List<string> GetVariableList()
+		{
+			List<string> variableList = new List<string> ();
+			int indexer = 0;
+			foreach (ITermItem iTermItem in TermItemList) {
+				int index = TermItemList.IndexOf (iTermItem);
+				if (iTermItem.GetType () == typeof(UIMath.TermVariable)) {
+					string variable = iTermItem.GetVariable ();
+					if (variableList.IndexOf (variable) == -1)
+						variableList.Add (variable);
+				} 
+			}
+			return variableList;
+		}
+		public int VariableCount()
+		{
+			int indexer = 0;
+			foreach (ITermItem iTermItem in TermItemList) {
+				if (iTermItem.GetType () == typeof(UIMath.TermVariable)) {
+					indexer++;
+				}
+			}
+			return indexer;
 		}
 		public string ToLatexString()
 		{

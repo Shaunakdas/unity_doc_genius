@@ -47,6 +47,9 @@ namespace UIMath{
 		{
 			return Value();
 		}
+		public string GetVariable(){
+			return "";
+		}
 		public string ToLatexString()
 		{
 
@@ -78,6 +81,7 @@ namespace UIMath{
 				throw new Exception("An error occurred while performing arithemetic operation on TermCoefficient.", e);
 			}
 		}
+
 		private static TermCoefficient Multiply(TermCoefficient termCoeff1, TermCoefficient termCoeff2)
 		{
 			try

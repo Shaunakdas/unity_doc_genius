@@ -41,11 +41,14 @@ namespace UIMath{
 		}
 		public long Value(long value)
 		{
-			return (long)Math.Pow (value, Exponent);
+			return (long)Math.Pow (value, this.Exponent);
 		}
 		public long Value()
 		{
 			return (long)1;
+		}
+		public string GetVariable(){
+			return this.Variable;
 		}
 		public string ToLatexString()
 		{
