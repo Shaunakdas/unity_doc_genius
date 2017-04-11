@@ -4,63 +4,44 @@ using System;
 using System.Collections.Generic;
 namespace UIMath{
 	public struct Term {
-		List<TermCoefficient> _termCoefficientList;
-		public List<TermCoefficient> TermCoefficientList
+		List<ITermItem> _termItemList;
+		public List<ITermItem> TermItemList
 		{
-			get { return _termCoefficientList; }
-			private set { _termCoefficientList = value; }
-		}
-		List<TermVariable> _termVariableList;
-		public List<TermVariable> TermVariableList
-		{
-			get { return _termVariableList; }
-			private set { _termVariableList = value; }
+			get { return _termItemList; }
+			private set { _termItemList = value; }
 		}
 		public Term(long value)
 		{
-			_termCoefficientList = new List<TermCoefficient>();
-			_termCoefficientList.Add(new TermCoefficient(value));
+			_termItemList = new List<ITermItem>();
+			_termItemList.Add(new TermCoefficient(value));
 		}
 		public Term(TermCoefficient termCoefficient)
 		{
-			_termCoefficientList = new List<TermCoefficient>();
-			_termCoefficientList.Add(termCoefficient);
-			_termVariableList = new List<TermVariable>();
+			_termItemList = new List<ITermItem>();
+			_termItemList.Add(termCoefficient);
 		}
 		public Term(TermVariable termVariable)
 		{
-			_termVariableList = new List<TermVariable>();
-			_termVariableList.Add(termVariable);
-			_termCoefficientList = new List<TermCoefficient>();
+			_termItemList = new List<ITermItem>();
+			_termItemList.Add(termVariable);
 		}
-		public Term(List<TermCoefficient> termCoefficientList)
-		{
-			_termCoefficientList = new List<TermCoefficient>(termCoefficientList);
-			_termVariableList = new List<TermVariable>();
-		}
-		public Term(List<TermVariable> termVariableList)
-		{
-			_termVariableList = new List<TermVariable>(termVariableList);
-			_termCoefficientList = new List<TermCoefficient>();
-		}
+//		public Term(List<TermCoefficient> termCoefficientList)
+//		{
+//			_termItemList = new List<ITermItem>(termCoefficientList);
+//		}
+//		public Term(List<TermVariable> termVariableList)
+//		{
+//			_termItemList = new List<ITermItem>(termVariableList);
+//		}
 		public bool Equals(Term other)
 		{
 			if (other == null)
 				return false;
 			bool output = false;
-			if (TermCoefficientList.Count == other.TermCoefficientList.Count) {
-				foreach (TermCoefficient termCoefficient in TermCoefficientList) {
-					int index = TermCoefficientList.IndexOf (termCoefficient);
-					if (TermCoefficient.Equals (other.TermCoefficientList [index]))
-						output = true;
-					else
-						return false;
-				}
-			}
-			if (TermVariableList.Count == other.TermVariableList.Count) {
-				foreach (TermVariable termVariable in TermVariableList) {
-					int index = TermVariableList.IndexOf (termVariable);
-					if (TermVariable.Equals (other.TermVariableList [index]))
+			if (TermItemList.Count == other.TermItemList.Count) {
+				foreach (ITermItem iTermItem in TermItemList) {
+					int index = TermItemList.IndexOf (iTermItem);
+					if (iTermItem.Equals (other.TermItemList [index]))
 						output = true;
 					else
 						return false;
@@ -78,31 +59,35 @@ namespace UIMath{
 		public long CoefficientValue()
 		{
 			long coefficientValue = 1;
-			foreach (TermCoefficient termCoefficient in TermCoefficientList) {
-				coefficientValue *= termCoefficient.Value ();
+			foreach (ITermItem iTermItem in TermItemList) {
+				if(iTermItem.GetType() == typeof(UIMath.TermCoefficient))
+					coefficientValue *= (long)(iTermItem.Value ());
 			}
 			return coefficientValue;
 		}
 		public long ValueAtVariableValue(List<long> valueList)
 		{
-			int variableValue = 1;
-			foreach (TermVariable termVariable in TermCoefficientList) {
-				int index = TermCoefficientList.IndexOf (termVariable);
-				variableValue *= termVariable.Value (valueList[index]);
+			long variableValue = 1;
+			int indexer = 0;
+			foreach (ITermItem iTermItem in TermItemList) {
+				int index = TermItemList.IndexOf (iTermItem);
+				if (iTermItem.GetType () == typeof(UIMath.TermVariable)) {
+					variableValue *= iTermItem.Value (valueList [indexer]);
+					indexer++;
+				} else {
+					variableValue *= iTermItem.Value ();
+				}
 			}
 			return variableValue;
 		}
 		public string ToLatexString()
 		{
 			string latexString = "";
-			int coefficientValue = 1;
-			foreach (TermCoefficient termCoefficient in TermCoefficientList) {
-				latexString += termCoefficient.ToLatexString ();
+			foreach (ITermItem iTermItem in TermItemList) {
+				latexString += iTermItem.ToLatexString ();
 			}
-			foreach (TermVariable termVariable in TermVariableList) {
-				latexString += termVariable.ToLatexString ();
-			}
-			return sb;
+
+			return latexString;
 		}
 
 		private static Term Multiply(Term term1, Term term2)
@@ -111,11 +96,8 @@ namespace UIMath{
 			{
 				checked
 				{
-					foreach (TermCoefficient termCoefficient in term2.TermCoefficientList) {
-						term1.TermCoefficientList.Add(termCoefficient);
-					}
-					foreach (TermVariable termVariable in term2.TermVariableList) {
-						term1.TermVariableList.Add(termVariable);
+					foreach (ITermItem iTermItem in term2.TermItemList) {
+						term1.TermItemList.Add(iTermItem);
 					}
 
 					return term1;

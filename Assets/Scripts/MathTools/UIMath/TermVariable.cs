@@ -2,9 +2,9 @@
 using System.Collections;
 using System;
 namespace UIMath{
-	public struct TermVariable {
+	public struct TermVariable : ITermItem {
 		string _variable;
-		public long Variable
+		public string Variable
 		{
 			get { return _variable; }
 			private set { _variable = value; }
@@ -17,7 +17,7 @@ namespace UIMath{
 		}
 		public TermVariable(string variableString)
 		{
-			_variable = value;
+			_variable = variableString;
 			_exponent = 1;
 		}
 		public TermVariable(string variableString, long exponent)
@@ -42,6 +42,10 @@ namespace UIMath{
 		public long Value(long value)
 		{
 			return (long)Math.Pow (value, Exponent);
+		}
+		public long Value()
+		{
+			return (long)1;
 		}
 		public string ToLatexString()
 		{

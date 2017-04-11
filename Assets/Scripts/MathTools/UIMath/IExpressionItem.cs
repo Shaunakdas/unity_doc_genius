@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 namespace UIMath{
-	public struct IExpressionItem{
+	public interface IExpressionItem{
 
 	}
 }

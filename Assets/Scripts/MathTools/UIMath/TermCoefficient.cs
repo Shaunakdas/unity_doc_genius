@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 namespace UIMath{
-	public struct TermCoefficient {
+	public struct TermCoefficient : ITermItem{
 		long _base;
 		public long Base
 		{
@@ -42,6 +42,10 @@ namespace UIMath{
 		public long Value()
 		{
 			return (long)Math.Pow (Base, Exponent);
+		}
+		public long Value(long value)
+		{
+			return Value();
 		}
 		public string ToLatexString()
 		{
