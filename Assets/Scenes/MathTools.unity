@@ -426,10 +426,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a4e3d61b45d45e29647350af0b27d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberTableGO: {fileID: 0}
-  TextCellPrefab: {fileID: 0}
-  AnswerGO: {fileID: 0}
-  InputNumber: 0
+  NumberTableGO: {fileID: 765239043}
+  TextCellPrefab: {fileID: 1000011138369192, guid: 2cd18862ae16341aa89df9ef35b6cd24,
+    type: 2}
+  AnswerGO: {fileID: 883935244}
+  InputNumber: 1789567
 --- !u!114 &597898392
 MonoBehaviour:
   m_ObjectHideFlags: 0
